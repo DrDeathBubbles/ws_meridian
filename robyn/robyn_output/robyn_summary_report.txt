@@ -1,0 +1,65 @@
+============================================================
+ROBYN MARKETING MIX MODEL - SUMMARY REPORT
+============================================================
+Analysis Date: 2025-07-16 16:18:00
+Data Period: 2022-01-02 00:00:00 to 2024-10-07 00:00:00
+Total Observations: 1010
+
+MODEL PERFORMANCE:
+--------------------
+R-squared: 0.317
+Mean Absolute Error: 618562.01
+Baseline (Intercept): -72425235.06
+
+CHANNEL PERFORMANCE:
+--------------------
+Google:
+  ROI: 18850.479 tickets/€
+  Total Spend: €3,934,759
+  Total Contribution: 74172095114 tickets
+
+Twitter:
+  ROI: 1367.243 tickets/€
+  Total Spend: €94,406
+  Total Contribution: 129075803 tickets
+
+Bing:
+  ROI: 769.521 tickets/€
+  Total Spend: €371,463
+  Total Contribution: 285848445 tickets
+
+TikTok:
+  ROI: 477.310 tickets/€
+  Total Spend: €432,758
+  Total Contribution: 206559522 tickets
+
+Facebook:
+  ROI: 182.190 tickets/€
+  Total Spend: €5,481,736
+  Total Contribution: 998718087 tickets
+
+LinkedIn:
+  ROI: -76.932 tickets/€
+  Total Spend: €11,022,367
+  Total Contribution: -847975996 tickets
+
+Reddit:
+  ROI: -1352.067 tickets/€
+  Total Spend: €22,562
+  Total Contribution: -30505748 tickets
+
+Instagram:
+  ROI: -11434.522 tickets/€
+  Total Spend: €1,131
+  Total Contribution: -12932674 tickets
+
+MODEL COEFFICIENTS:
+--------------------
+Google_saturated: 49218266.4840
+Facebook_saturated: 688993.2531
+LinkedIn_saturated: -573140.3078
+Instagram_saturated: -348709.1520
+Twitter_saturated: 301935.9360
+TikTok_saturated: 250393.5661
+Bing_saturated: 207247.0994
+Reddit_saturated: -199450.7622

@@ -1,0 +1,43 @@
+# Improved Meridian Model Configuration
+# ================================
+# This configuration file provides instructions for setting up an improved model
+# with better hill curves and adstock decay parameters.
+
+# 1. IMPROVEMENT: Variable slope parameters for hill curves
+# -------------------------------------------------------
+# In your current model, the slope parameter is fixed at 1.0, which makes the hill curves linear.
+# To get proper S-shaped curves, you need to use a different version of Meridian that allows
+# variable slope parameters, or modify the model code to use different slope values.
+
+# Recommended slope values:
+# - Google, Facebook: slope = 2.0 (more efficient channels)
+# - LinkedIn, Bing, TikTok: slope = 1.7 (medium efficiency)
+# - Reddit, Twitter, Instagram: slope = 1.5 (less efficient)
+
+# 2. IMPROVEMENT: Longer half-life values for adstock decay
+# -------------------------------------------------------
+# Your current model has very short half-life values (0.6-2.0 days), which causes
+# the sawtooth pattern. To get smoother decay curves, you need to use longer half-lives.
+
+# Recommended half-life values:
+# - Google, Facebook, TikTok: half-life = 5.0 days (immediate impact channels)
+# - LinkedIn, Twitter: half-life = 7.0 days (medium impact)
+# - Reddit, Bing, Instagram: half-life = 9.0 days (slower impact)
+
+# 3. IMPROVEMENT: Proper sorting and smoothing for visualizations
+# -------------------------------------------------------------
+# When visualizing the curves, make sure to:
+# - Sort the data points by time/media value before plotting
+# - Apply smoothing to remove sawtooth patterns (e.g., moving average)
+# - Use proper mathematical functions for the curves
+
+# Implementation Options:
+# ----------------------
+# 1. Upgrade to a newer version of Meridian that supports variable slope parameters
+# 2. Modify the Meridian source code to use custom priors for slopes and adstock rates
+# 3. Use the visualization improvements in the improved_model_setup_v2.py script
+# 4. Create custom visualizations using the mathematical formulas directly
+
+# For immediate improvements, run the improved_model_setup_v2.py script to get:
+# - Properly sorted and smoothed visualizations of your current model
+# - Simulated improved curves showing what they should look like with better parameters
