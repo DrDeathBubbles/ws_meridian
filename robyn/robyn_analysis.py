@@ -29,9 +29,9 @@ class RobynMMM:
         # Convert date column
         df['date'] = pd.to_datetime(df['date_id'])
         
-        # Use conference_year as KPI (dependent variable)
+        # Use ticket_sales as KPI (dependent variable)
         daily_data = df.groupby('date').agg({
-            'conference_year': 'sum',  # Use as KPI
+            'ticket_sales': 'sum',  # Use as KPI
             'campaign_spend_eur': 'sum',
             'impressions': 'sum',
             'clicks': 'sum',
@@ -53,9 +53,6 @@ class RobynMMM:
             'twitter_impressions': 'sum',
             'instagram_impressions': 'sum'
         }).reset_index()
-        
-        # Rename for clarity
-        daily_data = daily_data.rename(columns={'conference_year': 'ticket_sales'})
         
         self.data = daily_data
         print(f"✅ Data loaded: {len(daily_data)} time periods")
@@ -449,7 +446,9 @@ def run_robyn_analysis():
     robyn = RobynMMM()
     
     # Load data
-    data_path = "../ws_attempt/data/raw_data/regularized_web_summit_data_fixed.csv"
+    # data_path = "../ws_attempt/data/raw_data/regularized_web_summit_data_fixed.csv"
+    # Updated to absolute path for reliability
+    data_path = "/home/aaron/work/ws_meridian/ws_attempt/data/raw_data/regularized_web_summit_data_fixed.csv"
     try:
         robyn.load_data(data_path)
     except FileNotFoundError:

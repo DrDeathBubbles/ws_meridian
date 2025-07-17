@@ -3,23 +3,13 @@ library(dplyr)
 library(lubridate)
 
 # Load and prepare data
-data <- read.csv("data/raw_data/regularized_web_summit_data_fixed.csv")
+data <- read.csv("data/raw_data/merged_marketing_tickets_fixed.csv")
 
 # Data preprocessing
 data$date_id <- as.Date(data$date_id)
 data <- data %>%
   arrange(date_id) %>%
   filter(!is.na(date_id))
-
-# Load and merge ticket sales data
-ticket_sales <- read.csv("data_ws/daily_ticket_sales.csv")
-ticket_sales$date_id <- as.Date(ticket_sales$date_id)
-
-# Merge with main data
-data <- left_join(data, ticket_sales, by = "date_id")
-
-# Fill NA values with 0 for ticket_sales
-data$ticket_sales[is.na(data$ticket_sales)] <- 0
 
 # Define dependent variable (KPI)
 dep_var <- "ticket_sales"
@@ -118,7 +108,7 @@ OutputCollect <- robyn_outputs(
   csv_out = "pareto",
   clusters = TRUE,
   plot_pareto = TRUE,
-  plot_folder = "plots"
+  plot_folder = "plots_ticket_sales"
 )
 
 # Get model results
